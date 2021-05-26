@@ -1,0 +1,12 @@
+{
+  "name": "ressortir-mobile",
+  "displayName": "ressortir-mobile",
+  "expo": {
+    "name": "ressortir-mobile",
+    "slug": "ressortir-mobile",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
