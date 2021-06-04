@@ -1,0 +1,22 @@
+import { primary } from '../themes/colors';
+
+export const PRIMARY = "#3EC261";
+export const PRIMARY_DARK = '#287c3d';
+export const BG_GRAY = '#818F90';
+export const BG_ASH = '#e4e4e4';
+export const DEFAULT_TEXT = '#323232';
+export const GRAY_TEXT = '#9A9A9A';
+export const DEFAULT_DARK_TEXT = '#1E272E';
+export const WARNING = '#E77F00';
+export const ORANGE = '#FF6F00';
+export const DANGER = '#C84248';
+export const RED = '#D0021B';
+export const SUCCESS = '#3EC261';
+export const DARK_SUCCESS = 'rgba(0,0,0,0.48)';
+export const SUCCESS_INVERSE = 'rgba(242,242,242,0.31)';
+export const YELLOW_TEXT = '#FAFFA0';
+export const INFO = '#00E7FF';
+export const BLUE = '#39B1FF';
+export const WHITE = '#FFFFFF';
+export const BLACK = '#000000';
+export const TRANSPARENT = 'transparent';
