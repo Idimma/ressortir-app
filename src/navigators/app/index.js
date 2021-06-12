@@ -1,42 +1,44 @@
-import React from 'react';
-import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import Tabs from 'navigators/tabs';
-import { enableScreens } from 'react-native-screens';
-import Product from 'containers/Product';
-import Review from 'containers/Product/Review';
-import Checkout from 'containers/Cart/Checkout';
-import PaymentResult from 'containers/Cart/Checkout/PaymentResult';
-import AddressBook from 'containers/AddressBook';
-import NewAddress from 'containers/AddressBook/NewAddress';
-import EditAddress from 'containers/AddressBook/EditAddress';
-import PaymentMethod from 'containers/PaymentMethod';
-import NewCard from 'containers/PaymentMethod/NewCard';
-import EditCard from 'containers/PaymentMethod/EditCard';
-import Search from 'containers/Search';
-import Category from 'containers/Category';
-import Shop from 'containers/Shop';
-import Orders from 'containers/Orders';
-import OrderDetails from 'containers/Orders/Details';
-import Notification from 'containers/Notification';
-import Pay from 'containers/Pay';
-import Chat from 'containers/Chat';
-import ChatRoom from 'containers/Chat/ChatRoom';
-import NetworkList from 'containers/NetworkList';
-import WishList from 'containers/WishList';
-import SingleWish from 'containers/WishList/SingleWish';
-import AddReview from 'containers/Review';
+import { APP_IS_LOGGED_IN, APP_LOGIN_PASSWORD, APP_TOKEN } from '../../utils/Constants';
+import {
+    getJSONData,
+    getStoredData,
+    setAppState,
+    setDispatch,
+    setDropDown,
+    setToken
+} from '../../utils/NavigationRef';
+
+// import Product from 'containers/Product';
+// import Review from 'containers/Product/Review';
+// import Checkout from 'containers/Cart/Checkout';
+// import PaymentResult from 'containers/Cart/Checkout/PaymentResult';
+// import AddressBook from 'containers/AddressBook';
+// import NewAddress from 'containers/AddressBook/NewAddress';
+// import EditAddress from 'containers/AddressBook/EditAddress';
+// import PaymentMethod from 'containers/PaymentMethod';
+// import NewCard from 'containers/PaymentMethod/NewCard';
+// import EditCard from 'containers/PaymentMethod/EditCard';
+// import Search from 'containers/Search';
+// import Category from 'containers/Category';
+// import Shop from 'containers/Shop';
+// import Orders from 'containers/Orders';
+// import OrderDetails from 'containers/Orders/Details';
+// import Notification from 'containers/Notification';
+// import Pay from 'containers/Pay';
+// import Chat from 'containers/Chat';
+// import ChatRoom from 'containers/Chat/ChatRoom';
+// import NetworkList from 'containers/NetworkList';
+// import WishList from 'containers/WishList';
+// import SingleWish from 'containers/WishList/SingleWish';
+// import AddReview from 'containers/Review';
 import { AuthContext } from 'contexts/AuthContext';
 import DropdownAlert from 'react-native-dropdownalert';
-import {
-  getJSONData,
-  getStoredData,
-  setAppState,
-  setDispatch,
-  setDropDown,
-  setToken
-} from '../../utils/NavigationRef';
+import React from 'react';
 import { Spinner } from '../../widgets';
-import { APP_IS_LOGGED_IN, APP_LOGIN_PASSWORD, APP_TOKEN } from '../../utils/Constants';
+// import Tabs from 'navigators/tabs';
+import Unauthenticated from 'navigators/auth/AuthenticationStack';
+import { createNativeStackNavigator } from 'react-native-screens/native-stack';
+import { enableScreens } from 'react-native-screens';
 import { loadProfile } from '../../utils';
 
 enableScreens();
@@ -76,8 +78,8 @@ class App extends React.Component<{}> {
           mode="modal"
           screenOptions={{ headerShown: false }}
         >
-          <Stack.Screen name="Tabs" component={Tabs}/>
-          <Stack.Screen name="Product" component={Product}/>
+        <Stack.Screen name="Auth" component={Unauthenticated}/>
+          {/*   <Stack.Screen name="Product" component={Product}/>
           <Stack.Screen name="Review" component={Review}/>
           <Stack.Screen name="Checkout" component={Checkout}/>
           <Stack.Screen name="PaymentResult" component={PaymentResult}/>
@@ -99,7 +101,7 @@ class App extends React.Component<{}> {
           <Stack.Screen name="NetworkList" component={NetworkList}/>
           <Stack.Screen name="WishList" component={WishList}/>
           <Stack.Screen name="SingleWish" component={SingleWish}/>
-          <Stack.Screen name="AddReview" component={AddReview}/>
+          <Stack.Screen name="AddReview" component={AddReview}/> */}
         </Stack.Navigator>
       );
   }

@@ -1,25 +1,27 @@
-import { Button, Container, IconButton, KeyboardAvoidingView, Text, TextField, } from 'components';
+import * as Yup from 'yup';
+
+import { APP_IS_LOGGED_IN, APP_LOGIN, APP_LOGIN_PASSWORD, APP_TOKEN } from '../../utils/Constants';
+import { Button, Container, IconButton, KeyboardAvoidingView, Text, TextField } from 'components';
 import { Image, Platform, StyleSheet, TouchableOpacity, View } from 'react-native';
-import React from 'react';
-import { Formik } from 'formik';
+import { catchError, loadProfile, parseEmailOrPhone, showInfo, showSuccess } from '../../utils';
+import {
+    getJSONData,
+    setAppState,
+    setClient,
+    setToken,
+    storeData,
+    storeJsonData
+} from '../../utils/NavigationRef';
+
 import { AuthContext } from 'contexts/AuthContext';
+import { AuthService } from '../../services';
 import Colors from 'themes/colors';
+import FingerprintScanner from 'react-native-fingerprint-scanner';
+import { Formik } from 'formik';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { getScreenWidth } from 'utils/size';
 import { scale } from 'react-native-size-matters';
-import * as Yup from 'yup';
-import { AuthService } from '../../services';
-import {
-  getJSONData,
-  setAppState,
-  setClient,
-  setToken,
-  storeData,
-  storeJsonData
-} from '../../utils/NavigationRef';
-import { catchError, loadProfile, parseEmailOrPhone, showInfo, showSuccess } from '../../utils';
-import FingerprintScanner from 'react-native-fingerprint-scanner';
-import { APP_IS_LOGGED_IN, APP_LOGIN, APP_LOGIN_PASSWORD, APP_TOKEN } from '../../utils/Constants';
 
 const styles = StyleSheet.create({
   container: {

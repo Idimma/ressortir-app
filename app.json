@@ -1,9 +1,9 @@
 {
-  "name": "ressortir-mobile",
-  "displayName": "ressortir-mobile",
+  "name": "Ressortir",
+  "displayName": "Ressortir App",
   "expo": {
-    "name": "ressortir-mobile",
-    "slug": "ressortir-mobile",
+    "name": "Ressortir",
+    "slug": "Ressortir",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
