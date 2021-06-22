@@ -16,8 +16,8 @@ RNPaystack.init({ publicKey: PAYSTACK_PUBLIC_KEY });
 LogBox.ignoreLogs(['VirtualizedLists', 'componentWillReceiveProps']);
 
 const App = () => {
-	useEffect(async () => {
-		await SplashScreen.hideAsync();
+	useEffect(() =>{
+		(async () => await SplashScreen.hideAsync())();
 	}, []);
 	return (
 		<AuthProvider>
