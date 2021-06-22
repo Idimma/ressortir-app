@@ -104,7 +104,8 @@ const Checkout = ({ navigation }) => {
       />
       <KeyboardAvoidingView contentContainerStyle={styles.container}>
         <DeliveryCard onChange={setDelivery}/>
-        {![null, '', 1].includes(delivery) ? <NDC onChange={setAddress}/> : <View/>}
+        {![null, '', 1].includes(delivery) ?
+            <NDC onChange={setAddress}/> : <View/>}
         {![null, '', 0].includes(delivery) ?
           <AddressCard navigation={navigation} onChange={setAddress}/> : <View/>}
         <PromoCard

@@ -1,18 +1,17 @@
 import Request from '../utils/Request';
 
 class AuthService   {
-  login = (data) =>  Request().post('auth/login', data);
-  logout = () =>  Request().post('auth/logout');
-  registerStart = (data) =>  Request().post('signup/user', data);
-  forgetPassword = (data) =>  Request().post('password/reset/start', data);
-  resetPassword = (data) =>  Request().post('password/reset/complete', data);
-  verifyOtp = (data) =>  Request().post('signup/otp/verify', data);
-  requestOtp = (otp_secret) =>  Request().post('signup/otp/request', { otp_secret });
-  getProfile = () =>  Request().get('auth/profile');
-  payCode = (paycode) =>  Request().post(`auth/user/verify/${paycode}?gateway=paycode`);
-  paystack = (reference) =>  Request().post(`auth/user/verify/${reference}?gateway=paystack`);
-  getCommission = () =>  Request().get('ecommerce/commissions/distribution');
-  getCommissionInfo = () =>  Request().get('ecommerce/commissions/info');
-  refreshToken = () =>  Request().post('auth/refresh');
+  login = (data) =>  Request().post('login', data);
+  logout = () =>  Request().post('logout');
+  registerStart = (data) =>  Request().post('register', data);
+  update = form_data => Request().post('user/update', form_data);
+  updateDetails = form_data => Request().post('user/update/details', form_data);
+  register = form_data => Request().post('register', form_data);
+  resetPassword = form_data => Request().post('password/reset', form_data);
+  forgetPassword = form_data => Request().post('password/forgot', form_data);
+  verifyToken = token => Request().get(`password/find/${token}`);
+  editPassword = data => Request().post('update/password', data).then(r => r.data);
+  findById = () => Request().get('user');
+
 }
 export default new AuthService();

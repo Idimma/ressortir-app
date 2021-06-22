@@ -4,14 +4,14 @@ import CategoryService from './category.service';
 import ProductService from './product.service';
 import CartService from './carts.service';
 import BookingService from './booking.service';
-import WalletService from './wallet.service';
-import SettingsService from './settings.service';
+// import WalletService from './wallet.service';
+// import SettingsService from './settings.service';
 import CardService from './card.service';
 import PayCodeService from './paycode.service';
 import OrderService from './order.service';
 import PromoService from './promo.service';
 import PaystackService from './paystack.service';
-import UserService from './user.service';
+// import UserService from './user.service';
 
 export {
   AuthService, CartService,
@@ -22,9 +22,9 @@ export {
   ProductService,
   PromoService,
   CategoryService,
-  // PageService,
-  WalletService,
-  SettingsService,
-  OrderService, UserService
+  // WalletService,
+  // SettingsService,
+  OrderService,
+  // UserService
 };
 

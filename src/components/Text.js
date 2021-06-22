@@ -22,7 +22,7 @@ const textStyles = (props) => {
     } = props;
     let styles = {};
     styles.fontWeight = '300';
-    // styles.fontFamily = 'medium';
+    styles.fontFamily = 'OpenSans-Regular';
 
     if (p) styles.padding = p;
     if (pl) styles.paddingLeft = pl;
@@ -59,15 +59,17 @@ const textStyles = (props) => {
     if (fw) styles.fontWeight = fw;
 
     if (bold) styles.fontWeight = 'bold';
-    // if (bold) styles.fontFamily = 'Bold';
+    if (bold) styles.fontFamily = 'OpenSans-SemiBold';
     // if (heavy) styles.fontFamily = 'Heavy';
     // if (demi) styles.fontFamily = 'Oblique';
 
     if (medium) styles.fontWeight = '600';
-    // if (medium) styles.fontFamily = 'Medium';
+    if (medium) styles.fontFamily = 'OpenSans-Regular';
 
     if (light) styles.fontWeight = '300';
-    // if (light) styles.fontFamily = 'Light';
+    if (light) styles.fontFamily = 'Light';
+    if (light) styles.fontFamily = 'OpenSans-Light';
+
 
     if (italic) styles.fontStyle = 'italic';
     if (italic) styles.fontFamily = 'OpenSans-LightItalic';
@@ -126,7 +128,7 @@ Text.propTypes = {
     flex: PropTypes.bool,
     color: PropTypes.oneOf(colorProps),
     font: PropTypes.oneOf(fontProps),
-    weight: PropTypes.oneOf(['regular', 'medium']),
+    weight: PropTypes.oneOf(['regular', 'medium', 'light', 'bold', 'italic']),
 };
 
 Text.defaultProps = {

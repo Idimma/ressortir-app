@@ -1,8 +1,7 @@
 import axios from 'axios/index';
 import { getToken } from './NavigationRef';
 
-// const baseURL = 'https://dev.ownafarm.biz/api/v1/';
-const baseURL = 'https://prod.ownafarm.biz/api/v1/';
+const baseURL ='https://admin.ressortir.com/api/';
 /**
  * Configure axios to automatically add baseUrl and authorization to needed api request
  */

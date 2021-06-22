@@ -22,6 +22,10 @@ const icons = {
     active: 'home',
     inactive: 'home-outline',
   },
+  'New Request': {
+    active: 'cart',
+    inactive: 'cart-outline',
+  },
   Shop: {
     active: 'shopping-search',
     inactive: 'shopping-outline',
@@ -31,6 +35,14 @@ const icons = {
     inactive: 'wallet-outline',
   },
   Cart: {
+    active: 'cart',
+    inactive: 'cart-outline',
+  },
+  Orders: {
+    active: 'playlist-check',
+    inactive: 'playlist-edit',
+  },
+  Gas: {
     active: 'cart',
     inactive: 'cart-outline',
   },

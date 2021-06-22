@@ -6,7 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.gray5,
+    backgroundColor: Colors.gray50,
     flex: 1,
   },
 });

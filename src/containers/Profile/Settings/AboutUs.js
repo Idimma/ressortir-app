@@ -1,63 +1,66 @@
 import React from 'react';
-import { Text, Container, NavBar } from 'components';
+import {Text, Container, NavBar} from 'components';
 import PropTypes from 'prop-types';
 import {
-  ScrollView, StyleSheet, Image, View,
+    ScrollView, StyleSheet, Image, View,
 } from 'react-native';
-import { scale } from 'react-native-size-matters';
+import {scale} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
-  container: {
-    padding: scale(14),
-  },
-  bannerContainer: {
-    flex: 1,
-    borderRadius: scale(20),
-    aspectRatio: 4 / 3,
-    overflow: 'hidden',
-  },
-  banner: {
-    flex: 1,
-    width: undefined,
-    height: undefined,
-    resizeMode: 'cover',
-  },
-  space: {
-    marginTop: scale(14),
-  },
+    container: {
+        padding: scale(14),
+    },
+    bannerContainer: {
+        flex: 0.7,
+        borderRadius: scale(20),
+        aspectRatio: 4 / 3,
+        overflow: 'hidden',
+    },
+    banner: {
+        flex: 1,
+        alignSelf: 'center',
+        width: '80%',
+        height: undefined,
+        resizeMode: 'contain',
+    },
+    space: {
+        marginTop: scale(14),
+    },
 });
 
-const AboutUs = ({ navigation }) => (
-  <Container backgroundColor="white">
-    <NavBar
-      title="About Us"
-      onLeftIconPress={() => navigation.goBack()}
-    />
-    <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.bannerContainer}>
-        <Image source={require('images/banners/12.jpg')} style={styles.banner} />
-      </View>
-      <Text style={styles.space}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nam vel libero sed nulla elementum placerat.
-        Nam non neque blandit, volutpat nunc sit amet, ultrices turpis.
-        In posuere, dolor eget ultricies accumsan,
-        libero erat sodales lorem, id suscipit dui felis ac quam.
-        Praesent pellentesque est quis risus sodales, ut fermentum arcu luctus.
-        Fusce fermentum laoreet dapibus. Mauris nec nulla nulla.
-        Sed gravida condimentum sapien, non pulvinar massa efficitur sit amet.
-        Cras ornare placerat finibus. Sed iaculis mauris in aliquet tristique.
-        Nunc mollis fermentum dui eget sagittis.
-        Curabitur mollis lobortis quam, ac ultrices magna facilisis eu.
-        Quisque sodales dolor eget feugiat consectetur. Maecenas eget venenatis quam.
-        Aliquam dictum volutpat tristique.
-      </Text>
-    </ScrollView>
-  </Container>
+const AboutUs = ({navigation}) => (
+    <Container backgroundColor="white">
+        <NavBar title="About Us" onLeftIconPress={() => navigation.goBack()}/>
+        <ScrollView contentContainerStyle={styles.container}>
+            <View style={styles.bannerContainer}>
+                <Image source={{uri: 'https://ressortir.com/images/logo/ressortir-logo.png'}} style={styles.banner}/>
+            </View>
+            <Text style={styles.space}>
+                Our core business at Ressortir is the sole-distribution of Automotive Gas Oil and Liquefied Petroleum
+                Gas. In addition, Ressortir offers freight distribution across cities in Nigeria.
+                {'\n\n\n'}
+                With reputable years of experience and reliable channel of distribution across the country, we always
+                ensure fast and accurate delivery of your products. We can handle long and short term contracts for
+                restaurants, factories, schools, offices, and other multinationals.
+                {'\n\n\n'}
+                <Text title>Our Mission{'\n'}</Text>
+                Our mission statement is simple, yet the foundation of everything we do at Ressortir , to provide
+                outstanding services.
+                {'\n\n\n'}
+                <Text title>Company Policy{'\n'}</Text>
+                1. Cooperate Style of leadership with the greatest possible individual autonomy for our employees
+                {'\n'}
+                2. Satisfied Customers and employees are prime company targets
+                {'\n'}
+                3. Permanent innovative adaption to industry changes and economic development
+                {'\n\n'}
+            </Text>
+        </ScrollView>
+    </Container>
 );
 
 AboutUs.propTypes = {
-  navigation: PropTypes.object.isRequired,
+    navigation: PropTypes.object.isRequired,
 };
 
 export default AboutUs;

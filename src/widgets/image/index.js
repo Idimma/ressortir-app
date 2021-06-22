@@ -9,7 +9,9 @@ export function Qmage(props) {
     if (stretch) resize = 'stretch';
     if (cover) resize = 'cover';
     if (center) resize = 'center';
+    const newProps = {props}
+    delete newProps.flex;
     return (
-        <Image{...props} resizeMode={resize} style={[viewStyles(props), props.style]}/>
+        <Image {...newProps} resizeMode={resize} style={[viewStyles(props), props.style]}/>
     );
 }

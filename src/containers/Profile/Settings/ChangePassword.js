@@ -6,7 +6,7 @@ import { scale } from 'react-native-size-matters';
 import { ScrollView } from '../../../widgets';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { UserService } from '../../../services';
+import {AuthService, UserService} from '../../../services';
 import { catchError, showSuccess } from '../../../utils';
 
 const styles = StyleSheet.create({
@@ -38,25 +38,25 @@ const ChangePassword = ({ navigation }) => {
           <Formik
             initialValues={{
               current_password: '',
-              new_password: '',
-              new_password_confirmation: ''
+              password: '',
+              password_confirmation: ''
             }}
             enableReinitialize
             validationSchema={Yup.object()
               .shape({
                 current_password: Yup.string()
                   .required('Password is required'),
-                new_password: Yup.string()
+                password: Yup.string()
                   .min(6, 'Password too short')
                   .required('Password is required'),
-                new_password_confirmation: Yup.string()
+                password_confirmation: Yup.string()
                   .min(6, 'Password too short')
                   .required('Confirmation is required'),
 
               })}
             onSubmit={(values, { setSubmitting, }) => {
               setSubmitting(true);
-              UserService.updatePassword(values)
+              AuthService.editPassword(values)
                 .then(({ data }) => {
                   showSuccess('Password Updated successfully');
                   navigation.goBack();
@@ -87,8 +87,8 @@ const ChangePassword = ({ navigation }) => {
                     value={values.current_password}
                     error={errors.current_password}
                     onSubmitEditing={() => {
-                      if (refs.new_password) {
-                        refs.new_password.focus();
+                      if (refs.password) {
+                        refs.password.focus();
                       }
                     }}
                     returnKeyType={'next'}
@@ -96,14 +96,14 @@ const ChangePassword = ({ navigation }) => {
                   <TextField
                     label="New password"
                     secureTextEntry
-                    onChangeText={handleChange('new_password')}
-                    onBlur={handleBlur('new_password')}
-                    value={values.new_password}
-                    error={errors.new_password}
-                    refs={r => refs.new_password = r}
+                    onChangeText={handleChange('password')}
+                    onBlur={handleBlur('password')}
+                    value={values.password}
+                    error={errors.password}
+                    refs={r => refs.password = r}
                     onSubmitEditing={() => {
-                      if (refs.new_password_confirmation) {
-                        refs.new_password_confirmation.focus();
+                      if (refs.password_confirmation) {
+                        refs.password_confirmation.focus();
                       }
                     }}
                     returnKeyType={'next'}
@@ -111,11 +111,11 @@ const ChangePassword = ({ navigation }) => {
                   <TextField
                     label="Confirm password"
                     secureTextEntry
-                    onChangeText={handleChange('new_password_confirmation')}
-                    onBlur={handleBlur('new_password_confirmation')}
-                    value={values.new_password_confirmation}
-                    error={errors.new_password_confirmation}
-                    refs={r => refs.new_password_confirmation = r}
+                    onChangeText={handleChange('password_confirmation')}
+                    onBlur={handleBlur('password_confirmation')}
+                    value={values.password_confirmation}
+                    error={errors.password_confirmation}
+                    refs={r => refs.password_confirmation = r}
                     onSubmitEditing={handleSubmit}
                     returnKeyType={'done'}
                   />

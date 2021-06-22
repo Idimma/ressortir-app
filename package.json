@@ -4,7 +4,11 @@
         "android": "react-native run-android",
         "ios": "react-native run-ios",
         "web": "expo start --web",
-        "start": "react-native start"
+        "start": "react-native start",
+        "build:android": "npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle",
+        "bundle-apk": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+        "release-android": "cd android && bash ./gradlew bundleRelease",
+        "assemble-android": "cd android && bash ./gradlew assembleRelease"
     },
     "dependencies": {
         "@react-native-async-storage/async-storage": "^1.15.2",

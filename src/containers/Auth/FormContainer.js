@@ -36,8 +36,8 @@ const FormContainer = ({
   <KeyboardAvoidingView contentContainerStyle={styles.container}>
     <View style={styles.innerContainer}>
       <View style={styles.welcome}>
-        <Text font="h2" weight="medium">{title}</Text>
-        <Text color="gray75">
+        <Text font="h2" title weight="medium">{title}</Text>
+        <Text mt={8} color="gray75">
           {subtitle}
         </Text>
       </View>

@@ -4,6 +4,8 @@ import React from "react";
 // import {ActivityIndicator} from "react-native";
 import {Qouch} from "./touch";
 import {Qext} from "./text";
+import {Button, TextField} from "../components";
+
 export {Spinner} from './spinner';
 export {Qiew as View} from './view';
 export {Qouch as TouchableOpacity} from './touch';

@@ -26,7 +26,10 @@ const initialState = ({
         items: [],
         details: {}
     },
-    orders: [],
+    orders: {
+        current: [],
+        completed: [],
+    },
     otp_code: {
         otp: '',
         otp_secret: ''

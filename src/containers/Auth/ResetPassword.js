@@ -10,7 +10,7 @@ const ResetPassword = ({
   navigation,
   route
 }) => {
-  const { otp_code } = route.params;
+  const otp_code = { ...route.params }
   const [errors, setErrors] = useState({});
   const refs = {};
   const [password, setPassword] = useState('');
@@ -28,6 +28,7 @@ const ResetPassword = ({
       return setErrors({ password_confirmation: 'Password confirmation must be same as password' });
     }
     otp_code.password = password;
+    otp_code.password_confirmation = password_confirmation;
     setLoading(true);
     AuthService.resetPassword(otp_code)
       .then(({ data }) => {

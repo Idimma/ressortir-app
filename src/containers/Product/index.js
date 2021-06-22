@@ -48,7 +48,7 @@ const Product = ({
 }) => {
 
   const { auth: { isLoggedIn } } = useContext(AuthContext);
-  const { product } = route.params;
+  const { product } = [];
   const [variant, setVariant] = useState('ghost');
   const [weight, setWeight] = useState(product.variants[0]);
   const [isLoading, setLoading] = useState(false);

@@ -326,13 +326,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const OrderDetails = ({
-  navigation,
-  route
-}) => {
+const OrderDetails = ({navigation, route}) => {
   const order = route.params.order;
-  const products = order.items;
-  // console.log('ORDER', order);
+  console.log(order)
+  // const products = order.items;
 
 
   const openTel = async (tel) => {
@@ -349,45 +346,22 @@ const OrderDetails = ({
   return (
     <Container>
       <NavBar
-        title={`Order #${order.id}`}
+        title={`Order #${order.order_no} Tracking`}
         onLeftIconPress={() => navigation.goBack()}
       />
-      <Tabs>
-        <View style={styles.flex} label="Order">
-          <ScrollView style={styles.scrollView}>
-            <Card style={styles.products}>
-              {products.map((product) => <LineItem product={product} key={product.id}/>)}
-            </Card>
-            <Card style={styles.price}>
-              <View style={styles.row}>
-                <Text bold>Promo Value</Text>
-                <Text >{Naira + formatMoney(order.promo_value)}</Text>
-              </View>
-              <View style={styles.row}>
-                <Text bold>Shipping fee</Text>
-                <Text>{Naira + formatMoney(order.delivery_fee)}</Text>
-              </View>
-              <View style={styles.row}>
-                <Text bold>Grand total</Text>
-                <Text weight="medium">{Naira + formatMoney(order.total_price)}</Text>
-              </View>
-            </Card>
-          </ScrollView>
-        </View>
 
         <ScrollView label="Tracking" contentContainerStyle={styles.container}>
           <Timeline currentIndex={4}>
             {/*['pending', processing transit delivered]*/}
             <TimelineBlock
               icon="package"
-              title="Order received"
+              title="Request Created"
               subtitle={order.created_at}
-              // hideTrack
             >
               <OrderBlock
-                icon={'navigation'} subtitle={'ORDER ID'}
-                value={order.id} title={'Order ID generated'}
-                id={'#' + order.id}/>
+                icon={'navigation'} subtitle={'ORDER No.'}
+                value={'#'+order.order_no} title={'Order No. generated'}
+                id={'#' + order.order_no}/>
             </TimelineBlock>
 
 
@@ -437,7 +411,6 @@ const OrderDetails = ({
             </TimelineBlock> }
           </Timeline>
         </ScrollView>
-      </Tabs>
     </Container>
   );
 };

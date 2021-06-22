@@ -180,7 +180,7 @@ export const viewStyles = (props) => {
 export const textStyles = (props) => {
     let cl = DEFAULT_TEXT;
     const {
-        color, fs, fw, primary, warning, danger, pl, p, pt, pr, pb, m, mr, ml, mt, bg, dark, demi, self_center,
+        absolute, color, fs, fw, primary, warning, danger, pl, p, pt, pr, pb, m, mr, ml, mt, bg, dark, demi, self_center,
         mb, w, align, info, white, opacity, ls, orange, black, bold, medium, light, italic, self_end, self_start,
         lh, h, heavy, py, px, my, mx, title, red, center, transparent, success, success_inverse, gray
     } = props;
@@ -218,6 +218,7 @@ export const textStyles = (props) => {
 
     if (fw) styles.fontWeight = fw;
 
+    if (absolute) styles.position = 'absolute';
     // if (bold) styles.fontWeight = 'bold';
     // if (bold) styles.fontFamily = 'Bold';
     // if (heavy) styles.fontFamily = 'Heavy';

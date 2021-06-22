@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 });
 
 const BottomSheet = ({
-  children, sheetRef, buttonText, onPress, height, ...otherProps
+  children, sheetRef, buttonText, onPress, hideButton, height, ...otherProps
 }) => {
   const onButtonPress = () => {
     sheetRef.current.close();
@@ -34,12 +34,12 @@ const BottomSheet = ({
     >
       <SafeAreaView style={styles.safeArea}>
         {children}
-        <View style={styles.footer}>
+        {!hideButton&&<View style={styles.footer}>
           <Button
             label={buttonText}
             onPress={onButtonPress}
           />
-        </View>
+        </View>}
       </SafeAreaView>
     </RBSheet>
   );

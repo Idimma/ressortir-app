@@ -1,9 +1,11 @@
 import { scale } from 'react-native-size-matters';
 
 const fontFamily = {
+  bold: 'OpenSans-SemiBold',
   medium: 'OpenSans-SemiBold',
   regular: 'OpenSans-Regular',
   italic: 'OpenSans-LightItalic',
+  light: 'OpenSans-LightItalic',
 };
 
 const fonts = {

@@ -1,6 +1,6 @@
 import { primary } from '../themes/colors';
 
-export const PRIMARY = "#3EC261";
+export const PRIMARY =  'rgba(23, 91, 170, 1)';
 export const PRIMARY_DARK = '#287c3d';
 export const BG_GRAY = '#818F90';
 export const BG_ASH = '#e4e4e4';
