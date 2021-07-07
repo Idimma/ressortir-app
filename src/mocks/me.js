@@ -2,7 +2,6 @@ const me = {
   name: 'John Doe',
   username: '@JohnDoe',
   email: 'john@doe.com',
-  image: require('images/users/7.jpg'),
   cards: [
     {
       bankName: 'City Ward Banks',

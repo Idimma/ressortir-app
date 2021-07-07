@@ -56,22 +56,18 @@ const news = [
   {
     title: 'Limited 50% vouchers to be grabbed!',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum eros lectus, sed varius lorem sodales et.',
-    image: require('images/banners/2.jpg'),
   },
   {
     title: '12.12 Up to 50% off for all clothing items',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum eros lectus, sed varius lorem sodales et.',
-    image: require('images/banners/3.jpg'),
   },
   {
     title: 'Storewide 70% discount until end of the month!',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum eros lectus, sed varius lorem sodales et.',
-    image: require('images/banners/5.jpg'),
   },
   {
     title: 'New store opening alert!',
     subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum eros lectus, sed varius lorem sodales et.',
-    image: require('images/banners/11.jpg'),
   },
 ];
 

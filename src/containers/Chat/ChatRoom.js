@@ -3,8 +3,6 @@ import {
   Container, NavBar, Avatar, Text, IconButton,
 } from 'components';
 import PropTypes from 'prop-types';
-import { getUserById } from 'mocks/users';
-import { getMessages } from 'mocks/chats';
 import { View, StyleSheet } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import Colors from 'themes/colors';
@@ -33,12 +31,12 @@ const styles = StyleSheet.create({
 const initialMessages = getMessages();
 
 const ChatRoom = ({ navigation, route }) => {
-  const user = getUserById(route?.params?.id);
-  const [messages, setMessages] = useState(initialMessages);
-
-  const onSend = useCallback((message = []) => {
-    setMessages((previousMessages) => GiftedChat.append(previousMessages, message));
-  }, []);
+  // // const user = getUserById(route?.params?.id);
+  // const [messages, setMessages] = useState(initialMessages);
+  //
+  // const onSend = useCallback((message = []) => {
+  //   setMessages((previousMessages) => GiftedChat.append(previousMessages, message));
+  // }, []);
 
   const renderBubble = (props) => (
     <Bubble

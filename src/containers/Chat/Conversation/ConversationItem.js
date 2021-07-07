@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Text, Avatar } from 'components';
 import { scale } from 'react-native-size-matters';
 import Colors from 'themes/colors';
-import { getUserById } from 'mocks/users';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
 });
 
 const ConversationList = ({ id, datetime, onChatPress }) => {
-  const user = getUserById(id);
+  const user = {} //getUserById(id);
   return (
     <TouchableOpacity onPress={() => onChatPress(id)}>
       <View style={styles.container}>

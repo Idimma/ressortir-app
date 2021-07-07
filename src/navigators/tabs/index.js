@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TabBar } from 'components';
+import React, {useContext} from 'react';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {TabBar} from 'components';
 import HomeStack from './home';
 import OrderStack from './orderstack';
 import FeedStack from './feed';
 import ProfileStack from './profile';
-import WalletStack from './wallet';
 import UnAuthenticated from '../auth/AuthenticationStack';
-import { AuthContext } from '../../contexts/AuthContext';
-import Orders from "../../containers/Orders";
+import {AuthContext} from '../../contexts/AuthContext';
 
 const Tab = createBottomTabNavigator();
 

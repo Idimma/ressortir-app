@@ -8,15 +8,6 @@ const posts = [
     comments: 12,
     views: '11k views',
     images: [
-      require('images/products/2/2_6.jpg'),
-      require('images/products/1/1_3.jpg'),
-      require('images/products/9/9_4.jpg'),
-      require('images/products/7/7_1.jpg'),
-      require('images/products/8/8_2.jpg'),
-      require('images/products/6/6_2.jpg'),
-      require('images/products/4/4_1.jpg'),
-      require('images/products/3/3_3.jpg'),
-      require('images/products/10/10_4.jpg'),
     ],
   },
   {
@@ -42,10 +33,6 @@ const posts = [
     comments: 10,
     views: '12.4k views',
     images: [
-      require('images/products/10/10_3.jpg'),
-      require('images/products/1/1_3.jpg'),
-      require('images/products/5/5_1.jpg'),
-      require('images/products/3/3_1.jpg'),
     ],
   },
   {
@@ -55,7 +42,6 @@ const posts = [
     comments: 16,
     views: '30k views',
     images: [
-      require('images/banners/2.jpg'),
     ],
   },
   {
@@ -73,9 +59,6 @@ const posts = [
     comments: 2,
     views: '15.1k views',
     images: [
-      require('images/products/1/1_2.jpg'),
-      require('images/products/7/7_4.jpg'),
-      require('images/products/8/8_2.jpg'),
     ],
   },
   {
@@ -95,12 +78,6 @@ const posts = [
     comments: 0,
     views: '7.4k views',
     images: [
-      require('images/products/7/7_6.jpg'),
-      require('images/products/8/8_3.jpg'),
-      require('images/products/6/6_5.jpg'),
-      require('images/products/10/10_4.jpg'),
-      require('images/products/9/9_2.jpg'),
-      require('images/products/3/3_2.jpg'),
 
     ],
   },
@@ -111,14 +88,7 @@ const posts = [
     comments: 2,
     views: '24.5k views',
     images: [
-      require('images/products/10/10_4.jpg'),
-      require('images/products/5/5_2.jpg'),
-      require('images/products/6/6_2.jpg'),
-      require('images/products/4/4_1.jpg'),
-      require('images/products/6/6_5.jpg'),
-      require('images/products/9/9_4.jpg'),
     ],
   },
 ];
 
-export const getPosts = () => shuffle(posts);

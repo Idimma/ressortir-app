@@ -1,11 +1,10 @@
 import {APP_IS_LOGGED_IN, APP_LOGIN_PASSWORD, APP_TOKEN} from '../../utils/Constants';
 import {getJSONData, getStoredData, setAppState, setDispatch, setDropDown, setToken} from '../../utils/NavigationRef';
-import Shop from 'containers/Shop';
 import Orders from 'containers/Orders';
 import OrderDetails from 'containers/Orders/Details';
 import {AuthContext} from 'contexts/AuthContext';
 import DropdownAlert from 'react-native-dropdownalert';
-import React, {useContext} from 'react';
+import React from 'react';
 import {Spinner} from '../../widgets';
 import Tabs from '../tabs';
 import {createNativeStackNavigator} from 'react-native-screens/native-stack';
