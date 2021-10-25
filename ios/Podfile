@@ -18,6 +18,5 @@ target 'Ressortir' do
   #     flipper_post_install(installer)
   #   end
   # end
-  pod 'react-native-paystack', :path => '../node_modules/react-native-paystack'
 
 end

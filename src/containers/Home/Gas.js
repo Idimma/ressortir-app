@@ -185,6 +185,7 @@ const Gas = ({navigation, route}) => {
                         if (values.payment_option === 'Pay Online') {
                             try {
                                showPayment.current.open()
+                               actions.setSubmitting(false);
                             } catch (e) {
                                 catchError(e)
                                 actions.setSubmitting(false);
@@ -199,7 +200,7 @@ const Gas = ({navigation, route}) => {
                         });
                     }}
                 >
-                    {({handleSubmit, values, handleBlur, setFieldValue, errors, handleChange, isSubmitting}) => (
+                    {({handleSubmit, values, handleBlur, setFieldValue, errors, handleChange, isSubmitting, }) => (
                         <View flex>
                             {showProfile ?
                                 <DetailsForm
@@ -456,7 +457,9 @@ const Gas = ({navigation, route}) => {
 
                                         <BottomSheet hideButton sheetRef={showPayment} height={getScreenHeight() / 1.5}>
                                             <View style={styles.sheet}>
-                                                <CardForm values={values} isLoggedIn={isLoggedIn} navigation={navigation}/>
+                                                <CardForm values={values} isLoggedIn={isLoggedIn} 
+                                                
+                                                navigation={navigation}/>
                                             </View>
                                         </BottomSheet>
                                     </Card>

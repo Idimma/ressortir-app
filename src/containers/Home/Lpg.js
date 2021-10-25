@@ -17,6 +17,7 @@ import {StyleSheet, Image} from "react-native";
 import DetailsForm from "./DetailsForm";
 
 import {AuthContext} from '../../contexts/AuthContext';
+
 import CardForm from "../PaymentMethod/CardForm";
 
 const styles = StyleSheet.create({
@@ -127,7 +128,7 @@ const LPG = ({navigation, route}) => {
                         name, email, phone,
                         service: 'lpg',
                     }}
-                    enableReinitialize
+                    // enableReinitialize
                     validationSchema={
                         Yup.object().shape({
                             phone: Yup.string().min(9, 'Phone number is too short').required('Phone number is required'),

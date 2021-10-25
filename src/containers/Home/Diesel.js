@@ -17,7 +17,7 @@ import {StyleSheet, Image} from "react-native";
 import DetailsForm from "./DetailsForm";
 
 import {AuthContext} from '../../contexts/AuthContext';
-import CardForm from "../PaymentMethod/CardForm";
+
 
 const styles = StyleSheet.create({
     card: {

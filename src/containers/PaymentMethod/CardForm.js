@@ -7,6 +7,7 @@ import {scale} from 'react-native-size-matters';
 import Amex from 'svgs/amex.svg';
 import MasterCard from 'svgs/mastercard.svg';
 import Visa from 'svgs/visa.svg';
+import  { Paystack }  from 'react-native-paystack-webview';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import CvvModal from './CvvModal';
 import {Formik} from 'formik';
@@ -15,108 +16,11 @@ import {AppService, CardService} from '../../services';
 import {catchError, showSuccess} from '../../utils';
 // import random from 'lodash/random';
 // import WebView from 'react-native-webview';
-import RNPaystack from 'react-native-paystack';
+// import RNPaystack from 'react-native-paystack';
 import {AuthContext} from '../../contexts/AuthContext';
 import {View} from '../../widgets';
-
-const app = {
-    monthAndSlashRegex: /^\d\d\/$/, // regex to match "MM / "
-    monthRegex: /^\d\d$/, // regex to match "MM"
-    cardTypes: {
-        'Visa': {
-            name: 'Visa',
-            code: 'vs',
-            security: 3,
-            pattern: /^4/,
-            valid_length: [16],
-            formats: {
-                length: 16,
-                format: 'xxxx xxxx xxxx xxxx'
-            }
-        },
-        'Mastercard': {
-            name: 'Mastercard',
-            code: 'mc',
-            security: 3,
-            pattern: /^5[1-5]/,
-            valid_length: [16],
-            formats: {
-                length: 16,
-                format: 'xxxx xxxx xxxx xxxx'
-            }
-        }
-    }
-};
-
-app.isValidLength = function (cc_num, card_type) {
-    for (let i in card_type.valid_length) {
-        if (cc_num.length <= card_type.valid_length[i]) {
-            return true;
-        }
-    }
-    return false;
-};
-
-app.getCardType = function (cc_num) {
-    for (let i in app.cardTypes) {
-        let card_type = app.cardTypes[i];
-        if (cc_num.match(card_type.pattern) && app.isValidLength(cc_num, card_type)) {
-            return card_type;
-        }
-    }
-};
-
-app.getCardFormatString = function (cc_num, card_type) {
-    for (let i in card_type.formats) {
-        let format = card_type.formats[i];
-        if (cc_num.length <= format.length) {
-            return format;
-        }
-    }
-};
-
-app.removeSlash = function (e) {
-    var isMonthAndSlashEntered = app.monthAndSlashRegex.exec(e.target.value);
-    if (isMonthAndSlashEntered && e.key === 'Backspace') {
-        e.target.value = e.target.value.slice(0, -3);
-    }
-};
-app.isInteger = function (x) {
-    return (typeof x === 'number') && (x % 1 === 0);
-};
-
-app.formatCardNumber = function (cc_num, card_type) {
-    var numAppendedChars = 0;
-    var formattedNumber = '';
-    var cardFormatIndex = '';
-
-    if (!card_type) {
-        return cc_num;
-    }
-
-    var cardFormatString = app.getCardFormatString(cc_num, card_type);
-    for (var i = 0; i < cc_num.length; i++) {
-        cardFormatIndex = i + numAppendedChars;
-        if (!cardFormatString || cardFormatIndex >= cardFormatString.length) {
-            return cc_num;
-        }
-
-        if (cardFormatString.charAt(cardFormatIndex) !== 'x') {
-            numAppendedChars++;
-            formattedNumber += cardFormatString.charAt(cardFormatIndex) + cc_num.charAt(i);
-        } else {
-            formattedNumber += cc_num.charAt(i);
-        }
-    }
-
-    return formattedNumber;
-};
-
-app.monitorCcFormat = function (value) {
-    var cc_num = value.replace(/\D/g, '');
-    var card_type = app.getCardType(cc_num);
-    return app.formatCardNumber(cc_num, card_type);
-};
+import {PAYSTACK_PUBLIC_KEY} from '../../utils/Constants'
+ 
 
 const styles = StyleSheet.create({
     flex: {
@@ -165,7 +69,22 @@ const CardForm = ({values: data, isLoggedIn, navigation}) => {
     const refs = {};
     return (
         <SafeAreaView style={styles.flex}>
-            <Formik
+<Paystack  
+paystackKey={PAYSTACK_PUBLIC_KEY}
+amount={ data.amount * 100}
+billingEmail={data.email}
+activityIndicatorColor="green"
+onCancel={catchError}
+onSuccess={(response) => {
+data.transaction_reference = response.reference;
+AppService.createOrder(data).then(() => {
+showSuccess('Order Created Successfully');
+navigation.navigate(isLoggedIn ? 'Orders' : 'Home')
+}).catch(catchError)
+}}
+autoStart={true}
+/>
+            {/* <Formik
                 initialValues={{
                     cardNumber: '',
                     email: data.email,
@@ -353,7 +272,7 @@ const CardForm = ({values: data, isLoggedIn, navigation}) => {
 
                     </>
                 )}
-            </Formik>
+            </Formik> */}
         </SafeAreaView>
     );
 };

@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
 const Freight = ({navigation, route}) => {
     useEffect(() => {
         loadProfile();
-        return null;
     }, [])
     const {auth: {isLoggedIn, user: {phone, email, name}}} = useContext(AuthContext);
     const refs = {};
@@ -118,7 +117,7 @@ const Freight = ({navigation, route}) => {
                         service: 'freight',  pickup_address: '', goods_size: '',  goods_type: '',
 
                     }}
-                    enableReinitialize
+                    // enableReinitialize
                     validationSchema={
                         Yup.object().shape({
                             phone: Yup.string().min(9, 'Phone number is too short').required('Phone number is required'),
@@ -132,10 +131,12 @@ const Freight = ({navigation, route}) => {
                     onSubmit={(values, actions) => {
                         AppService.createOrder(values).then(() => {
                             showSuccess('Order Created Successfully')
+                             actions.setSubmitting(false);
                             navigation.navigate(isLoggedIn ? 'Orders' : 'Home')
-                        }).catch(catchError).finally(() => {
-                            actions.setSubmitting(false);
-                        });
+                        }).catch((e) =>{
+                            catchError(e)
+                            .setSubmitting(false);
+                            })
                     }}
                 >
                     {({handleSubmit, values, handleBlur, setFieldValue, errors, handleChange, isSubmitting}) => (

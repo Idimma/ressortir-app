@@ -52,9 +52,6 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - Paystack (3.0.15):
-    - Paystack/Core (= 3.0.15)
-  - Paystack/Core (3.0.15)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -223,10 +220,7 @@ PODS:
   - React-jsinspector (0.63.4)
   - react-native-fingerprint-scanner (6.0.0):
     - React
-  - react-native-image-picker (3.8.1):
-    - React-Core
-  - react-native-paystack (3.4.0):
-    - Paystack
+  - react-native-paystack-webview (4.0.3):
     - React
   - react-native-safe-area-context (3.2.0):
     - React-Core
@@ -388,8 +382,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-fingerprint-scanner (from `../node_modules/react-native-fingerprint-scanner`)
-  - react-native-image-picker (from `../node_modules/react-native-image-picker`)
-  - react-native-paystack (from `../node_modules/react-native-paystack`)
+  - react-native-paystack-webview (from `../node_modules/react-native-paystack-webview`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-webview (from `../node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -427,7 +420,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
-    - Paystack
 
 EXTERNAL SOURCES:
   BVLinearGradient:
@@ -486,10 +478,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-fingerprint-scanner:
     :path: "../node_modules/react-native-fingerprint-scanner"
-  react-native-image-picker:
-    :path: "../node_modules/react-native-image-picker"
-  react-native-paystack:
-    :path: "../node_modules/react-native-paystack"
+  react-native-paystack-webview:
+    :path: "../node_modules/react-native-paystack-webview"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-webview:
@@ -576,7 +566,6 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
-  Paystack: 857d9ffe01b629b5cedd3309246a082d340e2b92
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -588,8 +577,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
   react-native-fingerprint-scanner: ac6656f18c8e45a7459302b84da41a44ad96dbbe
-  react-native-image-picker: 31971f6184e7c1dcb4fc1f122e1ba2c3fb11ef1e
-  react-native-paystack: 90e74a1b5ff17bb4d9bd1cc35f0ff2d5ad442f87
+  react-native-paystack-webview: d8ed4a0300c7872673e186294cb6176cca46c696
   react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   react-native-webview: 6520e3e7b4933de76b95ef542c8d7115cf45b68e
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
@@ -624,6 +612,6 @@ SPEC CHECKSUMS:
   UMTaskManagerInterface: 203c11259d2699b5b3a4eda4adbc466f5cb5c561
   Yoga: 4bd86afe9883422a7c4028c00e34790f560923d6
 
-PODFILE CHECKSUM: beff5ba0b0abb61095cf977ce367439e1286d07c
+PODFILE CHECKSUM: 6bcc87f5625021512cf5a91d36f3495b073ace5d
 
 COCOAPODS: 1.10.1

@@ -102,8 +102,12 @@ const Settings = ({navigation}) => {
                     <TouchableOpacity
                         style={styles.signOut}
                         onPress={async () => {
+                            try {
+                         await    AsyncStorage.multiRemove([APP_TOKEN, APP_IS_LOGGED_IN, APP_LOGIN, APP_DB])                                
+                            } catch (error) {
+                                
+                            }
                             setAppState({isLoggedIn: false});
-                            await AsyncStorage.multiRemove([APP_TOKEN, APP_IS_LOGGED_IN, APP_LOGIN, APP_DB]);
                         }}
                     >
                         <Text>Sign Out</Text>
